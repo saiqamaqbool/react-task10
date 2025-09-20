@@ -7,6 +7,8 @@ import BodyImage from "./task10/body";
 function App() {
   const [showForm, setShowForm] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  
+  const [userIsLoggedIn, setUserIsLoggedIn] = useState(false);
    let content;
    if (submitted) {
     content = (
@@ -15,7 +17,9 @@ function App() {
       </div>
     );
   } else if (showForm) {
-    content = <BodyImage setSubmitted={setSubmitted} />;
+    content = <BodyImage setSubmitted={setSubmitted}
+    setUserIsLoggedIn={setUserIsLoggedIn}
+     />;
   } else {
     content =  <div className="flex-grow-1"></div>;
   }
@@ -23,7 +27,9 @@ function App() {
 
   return (
     <div className="d-flex flex-column min-vh-100">
-      <Header setShowForm={setShowForm} />
+      <Header setShowForm={setShowForm}
+      userIsLoggedIn={userIsLoggedIn}
+       />
        {content} 
       <FooterPart />
     </div>

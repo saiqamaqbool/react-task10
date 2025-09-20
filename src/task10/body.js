@@ -6,7 +6,7 @@ function BodyImage(props){
   const handleSubmit = (e) => { 
     e.preventDefault(); 
     props.setSubmitted(true);
-  
+     props.setUserIsLoggedIn(true);
   
   };
 

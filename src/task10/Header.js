@@ -8,8 +8,13 @@ function Header(props){
       <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
        
   <div class="container-fluid">
-    <button type="button" class="btn btn-success ms-auto" onClick={() => props.setShowForm(true)}>
-      <LoginButton/>
+   <button
+              type="button"
+              class="btn btn-success ms-auto"
+              onClick={() => props.setShowForm(true)}> 
+            
+              <LoginButton userIsLoggedIn={props.userIsLoggedIn} />
+    
       </button>
     
   </div>
